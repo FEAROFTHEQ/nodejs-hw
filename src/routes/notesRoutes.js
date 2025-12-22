@@ -16,10 +16,6 @@ import {
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.status(200).json({ message: 'Hello!' });
-});
-
 router.get('/notes', celebrate(getAllNotesSchema), getAllNotes);
 
 router.get('/notes/:noteId', celebrate(noteIdSchema), getNoteById);

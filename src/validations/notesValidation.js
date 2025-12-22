@@ -22,7 +22,7 @@ export const noteIdSchema = {
 export const createNoteSchema = {
   [Segments.BODY]: Joi.object({
     title: Joi.string().min(1).max(500).required(),
-    content: Joi.string().max(5000),
+    content: Joi.string().max(5000).trim().allow(''),
     tag: Joi.string().valid(...TAGS),
   }),
 };
