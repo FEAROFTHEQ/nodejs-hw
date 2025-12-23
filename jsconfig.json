@@ -3,11 +3,7 @@
     "target": "ES2023",
     "module": "esnext",
     "checkJs": true,
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "*": ["./*"]
-    }
+    "moduleResolution": "node"
   },
   "exclude": ["node_modules"]
 }
