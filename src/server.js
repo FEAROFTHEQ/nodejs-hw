@@ -27,7 +27,17 @@ app.use(userRoutes);
 app.use(notFoundHandler);
 app.use(errors());
 app.use(errorHandler);
-await connectMongoDB();
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
+const start = async () => {
+  try {
+    await connectMongoDB();
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch {
+    console.log('Failed to start server');
+    process.exit(1);
+  }
+};
+
+start();
